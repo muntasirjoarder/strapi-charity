@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "patients",
+  "info": {
+    "singularName": "patient",
+    "pluralName": "patients",
+    "displayName": "patient",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "full_name": {
+      "type": "string"
+    },
+    "date_of_birth": {
+      "type": "date"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "patient_id": {
+      "type": "customField",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "cause": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cause.cause",
+      "mappedBy": "patient"
+    }
+  }
+}

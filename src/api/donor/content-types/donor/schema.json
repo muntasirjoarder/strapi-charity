@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "donors",
+  "info": {
+    "singularName": "donor",
+    "pluralName": "donors",
+    "displayName": "donor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "donor_id": {
+      "type": "customField",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "donation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::donation.donation",
+      "mappedBy": "donor"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

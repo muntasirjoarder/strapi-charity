@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "donations",
+  "info": {
+    "singularName": "donation",
+    "pluralName": "donations",
+    "displayName": "donation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "donation_id": {
+      "type": "customField",
+      "customField": "plugin::field-uuid.uuid"
+    },
+    "donor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::donor.donor",
+      "inversedBy": "donation"
+    },
+    "cause": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cause.cause"
+    },
+    "donation_date": {
+      "type": "date",
+      "required": true
+    }
+  }
+}
