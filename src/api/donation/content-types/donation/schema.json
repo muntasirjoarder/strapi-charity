@@ -30,6 +30,10 @@
     "donation_date": {
       "type": "date",
       "required": true
+    },
+    "amount": {
+      "required": true,
+      "type": "decimal"
     }
   }
 }
